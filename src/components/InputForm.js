@@ -10,7 +10,7 @@ const InputForm = ({ setResponseData }) => {
     e.preventDefault();
     try {
       const parsedData = JSON.parse(jsonInput);
-      const response = await axios.post('https://bfhl-bajaj.vercel.app/', parsedData);
+      const response = await axios.post('https://bfhl-bajaj-production.up.railway.app/', parsedData);
       setResponseData(response.data);
       setError('');
     } catch (err) {
@@ -18,7 +18,6 @@ const InputForm = ({ setResponseData }) => {
     }
   };
 
-  const handleGetRequest = async () => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
