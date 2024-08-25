@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import InputForm from './components/InputForm';
+import ResponseDisplay from './components/ResponseDisplay';
+import './index.css';
 
-function App() {
+const App = () => {
+  const [responseData, setResponseData] = useState(null);
+  useEffect(() => {
+    document.title = '21BCI0317'; 
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <h1>21BCI0317</h1> 
+      <InputForm setResponseData={setResponseData} />
+      {responseData && <ResponseDisplay responseData={responseData} />}
     </div>
   );
-}
+};
 
 export default App;
