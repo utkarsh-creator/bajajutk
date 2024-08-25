@@ -10,7 +10,7 @@ const InputForm = ({ setResponseData }) => {
     e.preventDefault();
     try {
       const parsedData = JSON.parse(jsonInput);
-      const response = await axios.post('YOUR_BACKEND_URL/bfhl', parsedData);
+      const response = await axios.post('https://bfhl-21bci0317.vercel.app/', parsedData);
       setResponseData(response.data);
       setError('');
     } catch (err) {
